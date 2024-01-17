@@ -1,19 +1,34 @@
-<nav class="navbar navbar-expand-md bg-dark navbar-dark" >
+{% url 'login' as login %}
+{% url 'signup' as signup %}
+
+
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <a href="#" class="navbar-brand">D'Mare Store</a>
-    <button type="button" name="button" class="navbar-toggler navbar-toggler-rigth" data-toggle="collapse" data-target="#navbarop">
+    <button type="button" name="button" class="navbar-toggler navbar-toggler-rigth" data-toggle="collapse"
+        data-target="#navbarop">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div id="navbarop" class="navbar-collapse collapse hide">
         <ul class="nav navbar-nav ml-auto">
-            <li class="navbar-item">
-                <a href="#" class="nav-link">Login</a>
-            </li>
-            <li class="navbar-item">
-                <a href="#" class="nav-link">Sing Up</a>
-            </li>
-            <li class="navbar-item">
-                <a href="#" class="nav-link">Log Out</a>
-            </li>
+            {% if user.is_authenticated %}
+                <li class="navbar-item">
+                    <a href="{% url 'logout' %}" class="nav-link">
+                        <span class="fa-solid fa-right-from-bracket"></span>
+                        Log Out</a>
+                </li>
+            {% else %}
+                    <!--request.path nos permite ver en que ruta estamos para así activar el icono de la ruta actual -->
+                <li class="navbar-item {% if request.path == login %}active{% endif %}"> 
+                    <a href="{{ login }}" class="nav-link"><span class="fas fa-user"></span>
+                        Login</a>
+                </li>
+
+                <li class="navbar-item {% if request.path == signup %}active{% endif %}">
+                    <a href="{{ signup }}" class="nav-link"><span class="fa-solid fa-user-plus"></span>
+                        Sing Up</a>
+                </li>
+            {% endif %}
         </ul>
 
     </div>
