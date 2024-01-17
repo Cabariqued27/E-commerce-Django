@@ -1,7 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from django.contrib import messages
-from .forms import SingUpForm
+from .forms import SignUpForm
+
+
+
+
 def index(request):
     return render(request,'index.html',{
         'message': 'Listado de productos',
@@ -38,8 +43,16 @@ def logout_view(request):
     messages.success(request, 'sesión cerrada exitosamente')
     return redirect('login')
 
-def singup(request):
-    form = SingUpForm()
+def signup(request):
+    form = SignUpForm(request.POST or None)
+
+    if request.method == 'POST' and form.is_valid():
+
+        user = form.save()# with this def create a user
+        if user:
+            messages.success(request, 'Usuario creado exitosamente')
+            return redirect('index')
+    
     return render(request, 'users/singup.html',{
         'form':form
     })
