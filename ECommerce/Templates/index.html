@@ -5,16 +5,10 @@
         <h1>{{message}}</h1>
 
         <ul class="list-group">
-            {% for product in products %}
+            {% for product in product_list %}
             <li class="list-group-item">
                 {{product.title}}
-                <span>
-                    {% if product.stock %}
-                    <span class="text-success">Disponible</span>
-                    {% else %}
-                    <span class="text-danger">No Disponible</span>
-                    {% endif %}
-                </span>
+                <span class="text-success">{{ product.price }}</span>
             </li>
             {% endfor %}
         </ul>

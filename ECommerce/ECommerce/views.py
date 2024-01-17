@@ -3,19 +3,16 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .forms import SignUpForm
-
+from products.models import Product
 
 
 
 def index(request):
+    products = Product.objects.all().order_by('-id')
     return render(request,'index.html',{
         'message': 'Listado de productos',
         'title':'D´Mare',
-        'products':[
-            {'title':'playera','price':5,'stock':True},
-            {'title':'playera2','price':15,'stock':True},
-            {'title':'playera3','price':20,'stock':False}
-        ]
+        'products':products
     })
 
 def login_view(request):
