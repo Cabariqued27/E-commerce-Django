@@ -1,0 +1,1 @@
+Recuerda que para visualizar el .json en vsCode debe estar en en UTF-16 LE pero para hacer el  python manage.py loaddata products.json debe esatr en UTF-8

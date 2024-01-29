@@ -4,12 +4,6 @@
 <div class="col">
     <h4 class="text-center">{{message}}</h4>
     {% include 'products/snippets/search.html' %}
-    <div class="row ml-auto mr-auto">
-        {% for object in product_list %}
-            <div class="col-4 mt-5">
-                {% include 'products/snippets/product.html' with product=object %}
-            </div>
-        {% endfor %}
-    </div>
+    {% include 'products/snippets/list.html' %}
 </div>
 {% endblock %}
