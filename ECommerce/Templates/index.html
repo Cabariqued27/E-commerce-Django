@@ -3,24 +3,11 @@
 {% block content %}
 <div class="col">
     <h4 class="text-center">{{message}}</h4>
+    {% include 'products/snippets/search.html' %}
     <div class="row ml-auto mr-auto">
-        {% for product in product_list %}
+        {% for object in product_list %}
             <div class="col-4 mt-5">
-                <div class="card h-500">
-
-                    <div class="text-center mt-2">
-                        {% if product.image %}
-                            <img src="{{ product.image.url }}" alt="Imagen del producto" width="300" height="400" class="rounded">
-                        {% endif %}
-                    </div>
-
-                    <div class="card-body">
-                        <h5 class="card-title">{{ product.title }}</h5>
-                        <p class="card-text">{{ product.description }}</p>
-                        <a href="#" class="btn btn-primary">Ver más</a>
-                    </div>
-
-                </div>
+                {% include 'products/snippets/product.html' with product=object %}
             </div>
         {% endfor %}
     </div>

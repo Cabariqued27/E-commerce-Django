@@ -1,0 +1,15 @@
+<div class="card h-500">
+
+    <div class="text-center mt-2">
+        {% if product.image %}
+            <img src="{{ product.image.url }}" alt="Imagen del producto" width="300" height="400" class="rounded">
+        {% endif %}
+    </div>
+
+    <div class="card-body">
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+        <a href="#" class="btn btn-primary">Ver más</a>
+    </div>
+
+</div>

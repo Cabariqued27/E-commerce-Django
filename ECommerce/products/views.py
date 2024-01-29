@@ -1,4 +1,5 @@
 from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -19,3 +20,11 @@ class ProductDetailView(DetailView):
      template_name = 'products/product.html'
 
      
+class ProductSearchListView(ListView):
+     template_name= 'products/search.html'
+
+     def get_queryset(self):
+          return Product.objects.filter(title=self.query())
+     
+     def query(self):
+          return self.request.GET.get('q')
