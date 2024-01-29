@@ -1,16 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="column">
-        <h1>{{message}}</h1>
+<div class="col">
+    <h4 class="text-center">{{message}}</h4>
+    <div class="row ml-auto mr-auto">
+        {% for product in product_list %}
+            <div class="col-4 mt-5">
+                <div class="card h-500">
 
-        <ul class="list-group">
-            {% for product in product_list %}
-            <li class="list-group-item">
-                {{product.title}}
-                <span class="text-success">{{ product.price }}</span>
-            </li>
-            {% endfor %}
-        </ul>
+                    <div class="text-center mt-2">
+                        {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="Imagen del producto" width="300" height="400" class="rounded">
+                        {% endif %}
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.title }}</h5>
+                        <h5 class="card-text">{{ product.description }}</h5>
+                        <a href="#" class="btn btn-primary">Ver más</a>
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
     </div>
+</div>
 {% endblock %}
