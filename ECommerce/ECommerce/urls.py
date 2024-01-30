@@ -13,7 +13,8 @@ urlpatterns = [
     path('users/signup', views.signup, name='signup'),
     path('users/logout', views.logout_view, name='logout'),
     path('admin/', admin.site.urls),
-    path('productos/', include('products.urls'))
+    path('productos/', include('products.urls')),
+    path('cart/', include('carts.urls')),
 ]
 
 if settings.DEBUG:
