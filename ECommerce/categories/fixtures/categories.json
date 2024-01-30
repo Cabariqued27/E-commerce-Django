@@ -1,0 +1,39 @@
+[
+{
+    "model": "categories.category",
+    "pk": 1,
+    "fields": {
+        "title": "Informal",
+        "description": "Prendas de vestir informales",
+        "created_at": "2024-01-29T22:36:11.853Z",
+        "products": [
+            5,
+            7
+        ]
+    }
+},
+{
+    "model": "categories.category",
+    "pk": 2,
+    "fields": {
+        "title": "Invierno",
+        "description": "Ideal para bajas temperaturas",
+        "created_at": "2024-01-29T22:36:37.692Z",
+        "products": [
+            6
+        ]
+    }
+},
+{
+    "model": "categories.category",
+    "pk": 3,
+    "fields": {
+        "title": "Elegante",
+        "description": "Prendas de vestir elegantes",
+        "created_at": "2024-01-29T22:36:57.556Z",
+        "products": [
+            8
+        ]
+    }
+}
+]

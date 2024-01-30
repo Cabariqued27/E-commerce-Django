@@ -1,1 +1,50 @@
-[{"model": "products.product", "pk": 5, "fields": {"title": "Sueter", "description": "Sueteer oversize color negro", "price": "20.00", "slug": "sueter", "image": "products/555074-800-auto_CHots9S.webp", "created_at": "2024-01-29T21:24:11.254Z"}}]
+[
+{
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+        "title": "Sueter",
+        "description": "Sueteer oversize color negro",
+        "price": "20.00",
+        "slug": "sueter",
+        "image": "products/555074-800-auto_CHots9S.webp",
+        "created_at": "2024-01-29T21:24:11.254Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+        "title": "Buzo",
+        "description": "Buzo de manga larga color rosado",
+        "price": "30.00",
+        "slug": "buzo",
+        "image": "products/558310-800-auto_Oj5B4gt.webp",
+        "created_at": "2024-01-29T22:34:33.568Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+        "title": "Sueter",
+        "description": "Sueter Oversize colo blanco",
+        "price": "15.00",
+        "slug": "sueter-7572743d",
+        "image": "products/559036-800-auto.webp",
+        "created_at": "2024-01-29T22:35:03.581Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+        "title": "Camisa",
+        "description": "Camisa playera",
+        "price": "18.00",
+        "slug": "camisa",
+        "image": "products/557021-500-auto_coG90Cz.webp",
+        "created_at": "2024-01-29T22:35:24.648Z"
+    }
+}
+]
