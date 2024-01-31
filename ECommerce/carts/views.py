@@ -1,6 +1,6 @@
-from django.shortcuts import get_object_or_404, render, redirect
-from .utils import get_or_create_cart
 from products.models import Product
+from .utils import get_or_create_cart
+from django.shortcuts import get_object_or_404, render, redirect
 # Create your views here.
 
 

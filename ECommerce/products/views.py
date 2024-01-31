@@ -1,10 +1,10 @@
 from typing import Any
-from django.db.models.query import QuerySet
+from .models import Product
 from django.db.models import  Q
 from django.shortcuts import render
+from django.db.models.query import QuerySet
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from .models import Product
 # Create your views here.
 
 class ProductListView(ListView):

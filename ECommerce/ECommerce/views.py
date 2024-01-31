@@ -1,9 +1,9 @@
+from users.models import User
+from .forms import SignUpForm
+from django.contrib import messages
+from products.models import Product
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from users.models import User
-from django.contrib import messages
-from .forms import SignUpForm
-from products.models import Product
 
 
 

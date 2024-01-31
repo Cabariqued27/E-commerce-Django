@@ -1,15 +1,15 @@
-import decimal
 import uuid
+import decimal
 from django.db import models
-from django.db.models.signals import pre_save, m2m_changed
 from users.models import User
 from products.models import Product
+from django.db.models.signals import pre_save, m2m_changed
 # Create your models here.
 
 class Cart(models.Model):
     cart_id = models.CharField(max_length=100, null=False, unique=True)
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
-    products = models.ManyToManyField(Product)
+    products = models.ManyToManyField(Product, through='CartProducts')
     subtotal = models.DecimalField(default=0.0, max_digits=8, decimal_places=2)
     total = models.DecimalField(default=0.0, max_digits=8, decimal_places=2)
     created_at = models.DateTimeField(auto_now_add= True)  
@@ -29,6 +29,13 @@ class Cart(models.Model):
     def update_total(self):
         self.total = self.subtotal + (self.subtotal * decimal.Decimal(Cart.FEE))
         self.save()
+
+class CartProducts(models.Model):
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
+    created_at = models.DateTimeField(auto_now_add= True)
+
 
     
 def set_cart_id(sender, instance, *args, **kwargs):
