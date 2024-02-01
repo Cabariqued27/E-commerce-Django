@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'carts',
     'users',
     'products',
+    'orders',
     'categories',
     'django.contrib.admin',
     'django.contrib.auth',
